@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   const gatsbyServerSideCheck = typeof window !== undefined;
 
@@ -39,19 +39,19 @@ const Layout = ({ children }) => {
 
   React.useEffect(() => {
     if (gatsbyServerSideCheck) {
-      localStorage.setItem('isDarkMode', `${isDarkMode}`)
+      localStorage.setItem('isDarkMode', `${isDarkMode}`);
     }
-  }, [isDarkMode])
+  }, [isDarkMode]);
 
   const currentTheme = isDarkMode ? darkTheme : lightTheme;
 
-  const toggleMode = () => setDarkMode(!isDarkMode)
+  const toggleMode = () => setDarkMode(!isDarkMode);
 
   return (
     <>
       <ThemeProvider theme={currentTheme}>
         <GlobalStyle />
-        <Header 
+        <Header
           siteTitle={data.site.siteMetadata.title}
           toggleMode={toggleMode}
           isDarkMode={isDarkMode}
@@ -64,10 +64,7 @@ const Layout = ({ children }) => {
             paddingTop: 0,
           }}
         >
-          <NavBar 
-            toggleMode={toggleMode}
-            isDarkMode={isDarkMode}
-          />
+          <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with
@@ -77,8 +74,8 @@ const Layout = ({ children }) => {
         </div>
       </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
