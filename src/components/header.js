@@ -12,7 +12,7 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
 
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <header
         style={{
           background: `rebeccapurple`,
@@ -41,10 +41,10 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
           </Link>
           </h1>
         </div>
-        <ToggleThemeButton
-          onClick={toggleMode}
-          title={toggleToolTip}
-        />
+        {/* <ToggleThemeButton */}
+        {/*   onClick={toggleMode} */}
+        {/*   title={toggleToolTip} */}
+        {/* /> */}
       </header>
     </>
   )
