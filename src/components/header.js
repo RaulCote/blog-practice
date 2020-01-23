@@ -1,25 +1,24 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { ToggleThemeButton } from '../ui/themeToggleIcon';
 import { GlobalStyle } from '../ui/body.js';
 
-const Header = ({ siteTitle, toggleMode, isDarkMode }) => { 
-
-  const toggleToolTip = isDarkMode 
-    ? 'Change to Light Theme' 
+const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
+  const toggleToolTip = isDarkMode
+    ? 'Change to Light Theme'
     : 'Change to Dark Theme';
 
   return (
     <>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       <header
         style={{
           background: `rebeccapurple`,
           marginBottom: `1.45rem`,
           display: 'flex',
           justifyContent: 'spaceBetween',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <div
@@ -30,15 +29,15 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
           }}
         >
           <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
-          </Link>
+            <Link
+              to="/"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
+            >
+              {siteTitle}
+            </Link>
           </h1>
         </div>
         {/* <ToggleThemeButton */}
@@ -47,15 +46,15 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
         {/* /> */}
       </header>
     </>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
