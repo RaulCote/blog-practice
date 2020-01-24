@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
     if (gatsbyServerSideCheck) {
       localStorage.setItem('isDarkMode', `${isDarkMode}`);
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, gatsbyServerSideCheck]);
 
   const currentTheme = isDarkMode ? darkTheme : lightTheme;
 
