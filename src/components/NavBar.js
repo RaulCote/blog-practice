@@ -11,7 +11,12 @@ const NavBar = ({ toggleMode, isDarkMode }) => {
   return (
     <>
       <ToggleThemeButton onClick={toggleMode} title={toggleToolTip} />
-      <RippleButton onClick={toggleMode} width={'100px'} height={'30px'}>
+      <RippleButton
+        onClick={toggleMode}
+        width={'100px'}
+        height={'30px'}
+        data-testid={'ripple-button'}
+      >
         Ripple
       </RippleButton>
     </>
