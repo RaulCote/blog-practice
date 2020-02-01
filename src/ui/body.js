@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.textColor};
-  }
+  // @font-face {
+  // font-family: Roboto;
+  // src: url('https://fonts.googleapis.com/css?family=Roboto');
+  // }
 `;

@@ -11,7 +11,7 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
 
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <header
         style={{
           background: `rebeccapurple`,
