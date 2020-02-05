@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ToggleThemeButton } from '../ui/themeToggleIcon';
 import { GlobalStyle } from '../ui/body.js';
 
 const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
@@ -40,10 +39,6 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
             </Link>
           </h1>
         </div>
-        {/* <ToggleThemeButton */}
-        {/*   onClick={toggleMode} */}
-        {/*   title={toggleToolTip} */}
-        {/* /> */}
       </header>
     </>
   );

@@ -3,6 +3,8 @@ import { render } from '@testing-library/react';
 import Layout from '../src/components/layout';
 import * as Gatsby from 'gatsby';
 
+jest.mock('gatsby');
+
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
 
 beforeEach(() => {
