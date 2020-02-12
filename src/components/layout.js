@@ -29,20 +29,20 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const gatsbyServerSideCheck = typeof window !== undefined;
+  const appIsLiveOnBrowser = typeof window !== undefined;
 
   const [isDarkMode, setDarkMode] = React.useState(() => {
-    if (gatsbyServerSideCheck) {
+    if (appIsLiveOnBrowser) {
       const themeStored = localStorage.getItem('isDarkMode');
       return themeStored === 'true' ? true : false;
     }
   });
 
   React.useEffect(() => {
-    if (gatsbyServerSideCheck) {
+    if (appIsLiveOnBrowser) {
       localStorage.setItem('isDarkMode', `${isDarkMode}`);
     }
-  }, [isDarkMode, gatsbyServerSideCheck]);
+  }, [isDarkMode, appIsLiveOnBrowser]);
 
   const currentTheme = isDarkMode ? darkTheme : lightTheme;
 
