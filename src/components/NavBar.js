@@ -8,6 +8,8 @@ const NavBar = ({ toggleMode, isDarkMode }) => {
     ? 'Change to Light Theme'
     : 'Change to Dark Theme';
 
+  // comment to test
+
   return (
     <>
       <ToggleThemeButton onClick={toggleMode} title={toggleToolTip} />
