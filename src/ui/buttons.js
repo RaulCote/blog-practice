@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ripple } from './keyframes';
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.colors.buttonBackground}; 
+  background-color: ${props => props.theme.colors.buttonBackground};
   color: ${props => props.theme.colors.textColor};
   border: 0px solid transparent;
   cursor: pointer;
@@ -19,7 +19,6 @@ export const Button = styled.button`
     width: 5px;
     height: 5px;
     background: ${props => props.theme.colors.rippleEffect};
-    //rgba(43, 206, 151, 0.664);
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
@@ -27,7 +26,7 @@ export const Button = styled.button`
     padding: 0px;
   }
 
-  &:focus:not(:active)::after {
+  &:active::after {
     animation: ${ripple} 1s ease-out;
   }
 
@@ -46,5 +45,5 @@ export const RippleButton = styled(Button)`
   border-radius: 4%;
   width: ${props => props.width};
   height: ${props => props.height};
-`
+`;
 

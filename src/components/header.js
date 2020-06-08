@@ -38,6 +38,12 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
               {siteTitle}
             </Link>
           </h1>
+          <h2>
+            <Link to={'/about'}>About</Link>
+          </h2>
+          <h2>
+            <Link to={'/work'}>Work</Link>
+          </h2>
         </div>
       </header>
     </>

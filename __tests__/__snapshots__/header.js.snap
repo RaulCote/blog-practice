@@ -40,6 +40,20 @@ exports[`GlobalStyle, lets see renders with GlobalStyle included! 1`] = `
         
       </a>
     </h1>
+    <h2>
+      <a
+        href="/about"
+      >
+        About
+      </a>
+    </h2>
+    <h2>
+      <a
+        href="/work"
+      >
+        Work
+      </a>
+    </h2>
   </div>
 </header>
 `;
@@ -84,6 +98,20 @@ exports[`Header renders correctly 1`] = `
         Default Starter
       </a>
     </h1>
+    <h2>
+      <a
+        href="/about"
+      >
+        About
+      </a>
+    </h2>
+    <h2>
+      <a
+        href="/work"
+      >
+        Work
+      </a>
+    </h2>
   </div>
 </header>
 `;

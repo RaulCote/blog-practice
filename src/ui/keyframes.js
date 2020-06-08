@@ -7,8 +7,8 @@ export const ripple = keyframes`
   }
 
   20% {
-    transform: scale(25, 25);
-    opacity: 1;
+    transform: scale(20, 20);
+    opacity: 0.8;
   }
 
   100% {
@@ -22,8 +22,6 @@ export const screenRipple = keyframes`
     transform: scale(0, 0);
     opacity: 1;
   }
-
-  
 
   25% {
     transform: scale(500, 500);

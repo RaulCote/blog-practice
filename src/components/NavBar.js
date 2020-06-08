@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { RippleButton } from '../ui/buttons';
 import { ToggleThemeButton } from '../ui/themeToggleIcon';
+import RippleMaterialButton from '../ui/ripple-button';
 
 const NavBar = ({ toggleMode, isDarkMode }) => {
   const toggleToolTip = isDarkMode
@@ -13,14 +14,22 @@ const NavBar = ({ toggleMode, isDarkMode }) => {
   return (
     <>
       <ToggleThemeButton onClick={toggleMode} title={toggleToolTip} />
-      <RippleButton
+      {/* <RippleButton */}
+      {/*   onClick={toggleMode} */}
+      {/*   width={'100px'} */}
+      {/*   height={'30px'} */}
+      {/*   data-testid={'ripple-button'} */}
+      {/* > */}
+      {/*   Ripple */}
+      {/* </RippleButton> */}
+
+      <RippleMaterialButton
         onClick={toggleMode}
-        width={'100px'}
-        height={'30px'}
-        data-testid={'ripple-button'}
+        // height={'30px'}
+        testId={'ripple-button'}
       >
-        Ripple
-      </RippleButton>
+        Ripple Material
+      </RippleMaterialButton>
     </>
   );
 };
