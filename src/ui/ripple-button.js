@@ -1,81 +1,95 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ripple } from './keyframes';
 
 const RippleButton = styled.button`
-    background-color: ${props => props.theme.colors.buttonBackground};
-    color: ${props => props.theme.colors.textColor};
-    border: 0px solid transparent;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85em;
-    outline: none;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4%;
-    width: ${props => props.width};
-    height: ${props => props.height};
+  background-color: ${props => props.theme.colors.buttonBackground};
+  color: ${props => props.theme.colors.textColor};
+  border: 0px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85em;
+  outline: none;
+  overflow: hidden;
+  padding: 0.5em;
+  position: relative;
+  border-radius: 4%;
+  width: ${props => props.width};
+  height: ${props => props.height};
+`;
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: ${props => props.top};
-      left: ${props => props.left}; 
-      width: 5px;
-      height: 5px;
-      background: ${props => props.theme.colors.rippleEffect};
-      opacity: 0;
-      border-radius: 100%;
-      padding: 0px;
-      transform: scale(1, 1) translateX(-${props =>
-        -props.left}) translateY(-${props => -props.top})};
-      transform-origin: ${props => props.left} ${props => props.top};
-       /*    transform: scale(1, 1) translate(-50%); 
-        transform-origin: 50% 50%;  */
+const RippleEffect = styled.span`
+  top: ${props => props.top};
+  left: ${props => props.left};
+  position: absolute;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  transform: scale(0);
+  background: ${props => props.theme.colors.rippleEffect};
+  animation: ${ripple} ${props => props.duration} ease-out;
+`;
+
+const useDebouncedRippleCleanUp = (rippleCount, duration, cleanUpFunction) => {
+  useEffect(() => {
+    let bounce = null;
+    if (rippleCount > 0) {
+      clearTimeout(bounce);
+
+      bounce = setTimeout(() => {
+        cleanUpFunction();
+        clearTimeout(bounce);
+      }, duration * 4);
     }
 
-    &:active::after {
-      animation: ${ripple} 1s ease-out;
-    }
+    return () => clearTimeout(bounce);
+  }, [rippleCount, duration, cleanUpFunction]);
+};
 
-    &:-moz-focusring {
-      outline: none;
-    }
-  `;
+const RippleMaterialButton = ({
+  width,
+  height,
+  children,
+  onClick,
+  testId,
+  duration = 500,
+}) => {
+  const [ripples, setRipples] = useState([]);
 
-const RippleMaterialButton = ({ width, height, children, onClick, testId }) => {
-  const [ripplePos, setRipplePos] = useState({ top: '50%', left: '50%' });
+  useDebouncedRippleCleanUp(ripples.length, duration, () => setRipples([]));
 
-  function getRipplePos(e) {
-    const {
-      width,
-      height,
-      left,
-      top,
-    } = e.currentTarget.getBoundingClientRect();
+  function addRipples(e) {
+    const newLeft = e.pageX - e.currentTarget.offsetLeft;
+    const newTop = e.pageY - e.currentTarget.offsetTop;
 
-    const newLeft = ((e.clientX - left) * 100) / width;
-    const newTop = ((e.clientY - top) * 100) / height;
+    const newRipple = {
+      left: newLeft + 'px',
+      top: newTop + 'px',
+    };
 
-    setRipplePos({
-      top: `${newTop.toFixed(0)}%`,
-      left: `${newLeft.toFixed(0)}%`,
-    });
+    setRipples(prevRipples => [...prevRipples, newRipple]);
   }
 
   return (
     <RippleButton
-      top={ripplePos.top}
-      left={ripplePos.left}
-      onMouseDown={getRipplePos}
-      onTouchStart={getRipplePos}
-      onClick={onClick}
+      onClick={e => {
+        addRipples(e);
+        onClick(e);
+      }}
       width={width}
       height={height}
       data-testid={testId}
     >
       {children}
+      {ripples.map((ripple, key) => (
+        <RippleEffect
+          key={key}
+          top={ripple.top}
+          left={ripple.left}
+          duration={`${duration}ms`}
+        />
+      ))}
     </RippleButton>
   );
 };

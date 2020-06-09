@@ -24,7 +24,7 @@ export const screenRipple = keyframes`
   }
 
   25% {
-    transform: scale(500, 500);
+    transform: scale(250, 250);
     opacity: 1;
   }
 
