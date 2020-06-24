@@ -4,19 +4,19 @@ import { useRippleEffect, RippleEffect } from '../hooks/ripple';
 
 const Button = styled.button`
   background-color: ${props => props.theme.colors.buttonBackground};
-  color: ${props => props.theme.colors.textColor};
+  border-radius: 4%;
   border: 0px solid transparent;
+  color: ${props => props.theme.colors.textColor};
   cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
   font-size: 0.85em;
+  font-weight: 600;
+  height: ${props => props.height};
   outline: none;
   overflow: hidden;
   padding: 0.5em;
   position: relative;
-  border-radius: 4%;
+  text-decoration: none;
   width: ${props => props.width};
-  height: ${props => props.height};
 `;
 
 const RippleButton = ({

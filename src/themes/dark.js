@@ -8,6 +8,7 @@ const darkTheme = {
     rippleEffect: '#FE4A40',
     changeModeEffect: '#03002F',
     toggleButton: '#FFFFFF',
+    shadowColor: '#000000',
   },
 };
 

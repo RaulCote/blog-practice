@@ -7,13 +7,19 @@ import { ripple } from '../ui/keyframes';
   buttom, Link, input etc ..
 
   ex:
-  <Button>
+  <Button
+    onClick={e => {
+        addRipples(e);
+        onClick(e);
+    }}
+  />
     ripples.map(ripple, key) => {
-      <RippleEffect onClick={e => {
-          addRipples(e);
-          onClick(e);
-        }
-      }... />
+      <RippleEffect
+        key={key}
+        top={ripple.top}
+        left={ripple.left}
+        duration={`${duration}ms`}
+      />
     }
   </Button>
   */

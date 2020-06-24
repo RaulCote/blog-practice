@@ -1,7 +1,19 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 import { GlobalStyle } from '../ui/body.js';
+import NavLink from '../ui/nav-link';
+
+const HeaderStyled = styled.header`
+  background-color: ${props => props.theme.colors.background};
+  // box-shadow: 0 0 3px 1px ${props => props.theme.colors.shadowColor};
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  height: 8vh;
+  color: ${props => props.theme.colors.textColor};
+`;
 
 const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
   const toggleToolTip = isDarkMode
@@ -11,41 +23,11 @@ const Header = ({ siteTitle, toggleMode, isDarkMode }) => {
   return (
     <>
       {/* <GlobalStyle /> */}
-      <header
-        style={{
-          background: `rebeccapurple`,
-          marginBottom: `1.45rem`,
-          display: 'flex',
-          justifyContent: 'spaceBetween',
-          alignItems: 'center',
-        }}
-      >
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `1.45rem 1.0875rem`,
-          }}
-        >
-          <h1 style={{ margin: 0 }}>
-            <Link
-              to="/"
-              style={{
-                color: `white`,
-                textDecoration: `none`,
-              }}
-            >
-              {siteTitle}
-            </Link>
-          </h1>
-          <h2>
-            <Link to={'/about'}>About</Link>
-          </h2>
-          <h2>
-            <Link to={'/work'}>Work</Link>
-          </h2>
-        </div>
-      </header>
+      <HeaderStyled>
+        <NavLink to="/">{siteTitle}</NavLink>
+        <NavLink to={'/about'}>About</NavLink>
+        <NavLink to={'/work'}>Work</NavLink>
+      </HeaderStyled>
     </>
   );
 };
