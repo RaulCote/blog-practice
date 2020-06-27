@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled, { css, ThemeContext } from 'styled-components';
 import { Link } from 'gatsby';
 
-export const LinkRipple = styled(Link)`
+export const LinkStyled = styled(Link)`
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
   cursor: pointer;
@@ -15,7 +15,7 @@ export const LinkRipple = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 3px solid transparent;
+  border-top: 4px solid transparent;
   transition-duration: 0.2s;
 
   &:hover {
@@ -27,24 +27,27 @@ export const LinkRipple = styled(Link)`
   }
 `;
 
-const NavLink = ({ to, width, height, children, testId }) => {
+const NavLink = ({ to, width, height, children, testId, responsive }) => {
   const theme = useContext(ThemeContext);
 
   return (
-    <LinkRipple
-      to={to}
-      activeStyle={{
-        borderTop: `3px solid ${theme &&
-          theme.colors &&
-          theme.colors.textColor}`,
-        textShadow: '0 0 1px black',
-      }}
-      width={width}
-      height={height}
+    <LinkStyled
+      activeStyle={
+        !responsive && {
+          borderTop: `4px solid ${theme &&
+            theme.colors &&
+            theme.colors.textColor}`,
+          fontWeight: 'bold',
+          textShadow: '0 0 1px black',
+        }
+      }
       data-testid={testId}
+      height={height}
+      to={to}
+      width={width}
     >
       {children}
-    </LinkRipple>
+    </LinkStyled>
   );
 };
 

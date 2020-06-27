@@ -9,13 +9,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import NavBar from '../components/NavBar';
+import ThemeToggler from '../components/ThemeToggler';
 import lightTheme from '../themes/light';
 import darkTheme from '../themes/dark';
 import { GlobalStyle } from '../ui/body';
 import { AppContainer } from '../ui/appcontainer';
 
-import Header from './header';
+import NavBar from './NavBar';
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={currentTheme}>
         {/* <GlobalStyle /> */}
         <AppContainer>
-          <Header
+          <NavBar
             siteTitle={data.site.siteMetadata.title}
             toggleMode={toggleMode}
             isDarkMode={isDarkMode}
@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
               paddingTop: 0,
             }}
           >
-            <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+            <ThemeToggler toggleMode={toggleMode} isDarkMode={isDarkMode} />
             <main>{children}</main>
             <footer>
               © {new Date().getFullYear()}, Built with

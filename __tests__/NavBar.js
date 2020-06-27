@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Header from '../src/components/header';
+import NavBar from '../src/components/NavBar';
 import { render } from '@testing-library/react';
 import { renderLightTheme } from '../utils/tests/themeContext';
 
-describe('Header', () => {
+describe('NavBar', () => {
   it('renders correctly', () => {
     const tree = renderLightTheme(
-      <Header siteTitle="Default Starter" />
+      <NavBar siteTitle="Default Starter" />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -28,7 +28,7 @@ describe('React Test Library', () => {
 describe('GlobalStyle, lets see', () => {
   it('renders with GlobalStyle included!', () => {
     const tree = renderLightTheme(
-      <Header sitTitle="Default Starter" />
+      <NavBar sitTitle="Default Starter" />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
