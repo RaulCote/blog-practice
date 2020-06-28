@@ -51,13 +51,15 @@ const NavLink = ({
   return (
     <GatsbyLinkStyled
       activeStyle={
-        !isResponsiveMenuOpen && {
-          borderTop: `4px solid ${theme &&
-            theme.colors &&
-            theme.colors.textColor}`,
-          fontWeight: 'bold',
-          textShadow: '0 0 1px black',
-        }
+        !isResponsiveMenuOpen
+          ? {
+              borderTop: `4px solid ${theme &&
+                theme.colors &&
+                theme.colors.textColor}`,
+              fontWeight: 'bold',
+              textShadow: '0 0 1px black',
+            }
+          : {}
       }
       data-testid={testId}
       height={height}

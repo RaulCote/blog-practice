@@ -1,49 +1,26 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ripple } from './keyframes';
 
 export const Button = styled.button`
   background-color: ${props => props.theme.colors.buttonBackground};
-  color: ${props => props.theme.colors.textColor};
-  border: 0px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85em;
-  outline: none;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: ${props => props.theme.colors.rippleEffect};
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-    padding: 0px;
-  }
-
-  &:active::after {
-    animation: ${ripple} 1s ease-out;
-  }
-
-  &:active {
-    padding: 0px;
-  }
-
-  &:-moz-focusring {
-    outline: none;
-  }
-`;
-
-export const RippleButton = styled(Button)`
-  overflow: hidden;
-  position: relative;
   border-radius: 4%;
-  width: ${props => props.width};
+  border: 0px solid transparent;
+  color: ${props => props.theme.colors.textColor};
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
   height: ${props => props.height};
+  outline: none;
+  overflow: hidden;
+  padding: 0.5em;
+  position: relative;
+  text-decoration: none;
+  width: ${props => props.width};
 `;
 
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  height: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  width: PropTypes.string,
+};

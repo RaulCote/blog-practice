@@ -1,31 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { useRippleEffect, RippleEffect } from '../hooks/ripple';
-
-const Button = styled.button`
-  background-color: ${props => props.theme.colors.buttonBackground};
-  border-radius: 4%;
-  border: 0px solid transparent;
-  color: ${props => props.theme.colors.textColor};
-  cursor: pointer;
-  font-size: 0.85em;
-  font-weight: 600;
-  height: ${props => props.height};
-  outline: none;
-  overflow: hidden;
-  padding: 0.5em;
-  position: relative;
-  text-decoration: none;
-  width: ${props => props.width};
-`;
+import { Button } from '../ui/buttons';
 
 const RippleButton = ({
-  width,
-  height,
   children,
+  duration = 500,
+  height,
   onClick,
   testId,
-  duration = 500,
+  width,
 }) => {
   const [ripples, addRipples] = useRippleEffect(duration, onClick);
 
@@ -50,6 +34,14 @@ const RippleButton = ({
       ))}
     </Button>
   );
+};
+
+RippleButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  duration: PropTypes.number,
+  height: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  width: PropTypes.string,
 };
 
 export default RippleButton;
