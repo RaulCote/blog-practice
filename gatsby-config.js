@@ -28,6 +28,7 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

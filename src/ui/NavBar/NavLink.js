@@ -18,6 +18,7 @@ export const GatsbyLinkStyled = styled(Link)`
   align-items: center;
   border-top: 4px solid transparent;
   transition-duration: 0.2s;
+  font-weight: bold;
 
   &:hover {
     background-color: #e4e6e9;
