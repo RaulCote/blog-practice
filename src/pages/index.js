@@ -12,7 +12,10 @@ const IndexPage = () => {
           title
         }
       }
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { template: { eq: "post" } } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
         edges {
           node {
             excerpt
@@ -32,29 +35,26 @@ const IndexPage = () => {
     }
   `);
 
-  const posts = data.allMarkdownRemark.edges.filter(
-    edge => edge.node.frontmatter.template === 'post'
-  );
-
   console.log('IndexPage ::: data ::: ', data);
+
+  const { edges: blogPosts } = data.allMarkdownRemark;
+
   return (
     <Layout>
       <SEO title={'Home'} />
       <section>
-        {posts.map(({ node }) => {
+        {blogPosts.map(({ node }) => {
           const {
-            fields: { slug, date },
-            frontmatter: { title },
+            fields: { slug },
+            frontmatter: { date, title },
             excerpt,
           } = node;
-
-          const postTitle = title || slug;
 
           return (
             <article key={slug}>
               <header>
                 <h3>
-                  <Link to={slug}>{postTitle}</Link>
+                  <Link to={slug}>{title}</Link>
                 </h3>
                 <date>{date}</date>
               </header>
