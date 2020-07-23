@@ -9,6 +9,8 @@ const lightTheme = {
     changeModeEffect: '#CBF1FF',
     toggleButton: '#161616',
     shadowColor: '#848484',
+    backgroundHover: '#E9EDF0',
+    textColorHover: '#1B1D22',
   },
 };
 

@@ -9,6 +9,8 @@ const darkTheme = {
     changeModeEffect: '#03002F',
     toggleButton: '#FFFFFF',
     shadowColor: '#000000',
+    backgroundHover: '#201E47',
+    textColorHover: 'white',
   },
 };
 

@@ -19,13 +19,15 @@ export const GatsbyLinkStyled = styled(Link)`
   border-top: 4px solid transparent;
   transition-duration: 0.2s;
   font-weight: bold;
+  opacity: 0.9;
 
   &:hover {
-    background-color: #e4e6e9;
+    opacity: 1;
+    color: ${props => props.theme.colors.textColorHover};
+    background-color: ${props => props.theme.colors.backgroundHover};
   }
 
   &:active {
-    background-color: #d7eaef;
   }
 `;
 
@@ -54,11 +56,9 @@ const NavLink = ({
       activeStyle={
         !isResponsiveMenuOpen
           ? {
-              borderTop: `4px solid ${theme &&
-                theme.colors &&
-                theme.colors.textColor}`,
-              fontWeight: 'bold',
-              textShadow: '0 0 1px black',
+              borderTop: `4px solid ${theme?.colors?.textColor}`,
+              color: theme?.colors?.textColorHover,
+              // textShadow: '0 0 1px black',
             }
           : {}
       }
