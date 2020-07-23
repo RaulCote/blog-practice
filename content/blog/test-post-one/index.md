@@ -10,7 +10,10 @@ tags:
 
 This is a test Post wrote on Mark Down, let's see if I can recover the information contained in here!
 
-- Hello
-    ```javascript
-    const hello = 'Hi this is my Text'
-    ```
+
+```javascript
+const hello = 'Hi this is my Text'
+function withAReallyLongNameThatCouldTakeArgsAndDoAbsolutelyNothing(...args) {
+
+}
+```
