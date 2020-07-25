@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import NavLink from '../ui/NavBar/NavLink';
 import BurguerMenu from '../ui/NavBar/BurguerMenu';
 import NavLinksContainer from '../ui/NavBar/NavLinksContainer';
+import ThemeToggler from './ThemeToggler';
 
 const Nav = styled.nav`
   height: 8vh;
 `;
 
-const NavBar = ({ siteTitle }) => {
+const NavBar = ({ siteTitle, toggleMode, isDarkMode }) => {
   const [isResponsiveMenuOpen, setToggleResponsiveMenu] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const NavBar = ({ siteTitle }) => {
           Work
         </NavLink>
       </NavLinksContainer>
+      <ThemeToggler toggleMode={toggleMode} isDarkMode={isDarkMode} />
     </Nav>
   );
 };

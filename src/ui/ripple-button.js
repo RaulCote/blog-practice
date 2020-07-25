@@ -1,7 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useRippleEffect, RippleEffect } from '../hooks/ripple';
 import { Button } from '../ui/buttons';
+import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
+
+const StyledRippleButton = styled(Button)`
+  ${MEDIA_QUERY_MOBILE_LIMIT} {
+    width: 20%;
+  }
+
+  font-size: 1em;
+  overflow: hidden;
+  border-radius: 0%;
+  background-color: ${props => props.theme.colors.background};
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 8vh;
+  width: 10%;
+  transition-duration: 0.2s;
+
+  &:hover {
+    // transform: scale(1.1);
+    opacity: 1;
+    color: ${props => props.theme.colors.textColorHover};
+    background-color: ${props => props.theme.colors.backgroundHover};
+  }
+`;
 
 const RippleButton = ({
   children,
@@ -14,7 +40,7 @@ const RippleButton = ({
   const [ripples, addRipples] = useRippleEffect(duration, onClick);
 
   return (
-    <Button
+    <StyledRippleButton
       onClick={e => {
         addRipples(e);
         onClick(e);
@@ -32,7 +58,7 @@ const RippleButton = ({
           duration={`${duration}ms`}
         />
       ))}
-    </Button>
+    </StyledRippleButton>
   );
 };
 

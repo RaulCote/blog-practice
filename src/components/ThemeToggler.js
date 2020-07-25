@@ -12,10 +12,10 @@ const ThemeToggler = ({ toggleMode, isDarkMode }) => {
 
   return (
     <>
-      <ToggleThemeButton onClick={toggleMode} title={toggleToolTip} />
+      {/* <ToggleThemeButton onClick={toggleMode} title={toggleToolTip} /> */}
 
       <RippleButton onClick={toggleMode} testId={'ripple-button'}>
-        Ripple Material
+        {isDarkMode ? 'Light' : 'Dark'}
       </RippleButton>
     </>
   );
@@ -26,4 +26,3 @@ ThemeToggler.propTypes = {
 };
 
 export default ThemeToggler;
-

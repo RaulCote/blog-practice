@@ -7,6 +7,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const {
     html,
     frontmatter: { date, title },
+    fields: {
+      readingTime: { text: displayReadingTime },
+    },
   } = data.markdownRemark;
 
   const { nextBlogPost, previousBlogPost } = pageContext;
@@ -15,7 +18,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     'Blog Post :::: data :::: ',
     data,
     ' page context :::: ',
-    pageContext
+    pageContext,
+    'readingTime ::: ',
+    displayReadingTime
   );
 
   return (
@@ -24,6 +29,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <article>
         <h1>{title}</h1>
         <date>{date}</date>
+        <h5>{displayReadingTime}</h5>
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </article>
 
@@ -65,6 +71,11 @@ export const blogPostsBySlugQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
               paddingTop: 0,
             }}
           >
-            <ThemeToggler toggleMode={toggleMode} isDarkMode={isDarkMode} />
+            {/* <ThemeToggler toggleMode={toggleMode} isDarkMode={isDarkMode} /> */}
             <main>{children}</main>
             <footer>
               © {new Date().getFullYear()}, Built with
