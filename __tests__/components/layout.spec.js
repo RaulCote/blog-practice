@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from '../src/components/layout';
+import Layout from '../../src/components/layout';
 import * as Gatsby from 'gatsby';
 
 jest.mock('gatsby');
@@ -35,7 +35,7 @@ describe('<Layout /> component tests', () => {
         <h1 data-testid={'layout-test'}>Welcome</h1>
       </Layout>
     );
-    expect(getByTestId('ripple-button')).toHaveTextContent('Ripple');
+    expect(getByTestId('ripple-button')).toHaveTextContent('Dark');
   });
 
   it('renders the footer', () => {

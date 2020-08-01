@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+.c4 {
+  background-color: #F3F5F7;
+  color: #2E3440;
+  cursor: pointer;
+  height: 100%;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 4px solid transparent;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.c4:hover {
+  opacity: 1;
+  color: #1B1D22;
+  background-color: #E9EDF0;
+}
+
+.c1 {
+  display: none;
+}
+
+.c2 {
+  background-color: #F3F5F7;
+  height: 8vh;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  color: #2E3440;
+}
+
+.c5 {
+  background-color: #5E81AC;
+  border-radius: 4%;
+  border: 0px solid transparent;
+  color: #2E3440;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  padding: 0.5em;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1em;
+  overflow: hidden;
+  border-radius: 0%;
+  background-color: #F3F5F7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 8vh;
+  width: 10%;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.c5:hover {
+  opacity: 1;
+  color: #1B1D22;
+  background-color: #E9EDF0;
+}
+
+.c0 {
+  height: 8vh;
+}
+
+@media screen and (max-width:600px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+  }
+
+  .c1 input {
+    display: none;
+  }
+
+  .c1 label {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 21px 21px;
+  }
+
+  .c1 #burguer-bar {
+    width: 22px;
+    margin: 6px 0px;
+    height: 2px;
+    background-color: #2E3440;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.23,1,0.32,1), color 1s cubic-bezier(0.23,1,0.32,1);
+    -webkit-transition: transform 1s cubic-bezier(0.23,1,0.32,1), color 1s cubic-bezier(0.23,1,0.32,1);
+    transition: transform 1s cubic-bezier(0.23,1,0.32,1), color 1s cubic-bezier(0.23,1,0.32,1);
+    top: 50%;
+    left: 50%;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.23,1,0.32,1), color 1s cubic-bezier(0.23,1,0.32,1);
+    -webkit-transform: translateY(-3.75px) translateZ(0);
+    -webkit-transform: translateY(-3.75px) translateZ(0);
+    -ms-transform: translateY(-3.75px) translateZ(0);
+    transform: translateY(-3.75px) translateZ(0);
+  }
+
+  .c1 #burguer-bar:last-child {
+    -webkit-transform: translateY(3.75px) translateZ(0);
+    -webkit-transform: translateY(3.75px) translateZ(0);
+    -ms-transform: translateY(3.75px) translateZ(0);
+    transform: translateY(3.75px) translateZ(0);
+  }
+
+  .c1 input:checked + label #burguer-bar {
+    -webkit-transform: rotate(45deg) translateZ(0);
+    -ms-transform: rotate(45deg) translateZ(0);
+    transform: rotate(45deg) translateZ(0);
+    top: 60%;
+    position: absolute;
+  }
+
+  .c1 input:checked + label #burguer-bar:last-child {
+    -webkit-transform: rotate(-45deg) translateZ(0);
+    -ms-transform: rotate(-45deg) translateZ(0);
+    transform: rotate(-45deg) translateZ(0);
+    top: 60%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width:601px) {
+  .c2 {
+    max-width: 960px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .c2 {
+    width: 0%;
+    height: 100vh;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .c2 .c3 {
+    color: transparent;
+    display: none;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .c5 {
+    width: 20%;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <input
+      checked={false}
+      id="burguer-check"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="burguer-check"
+    >
+      <div
+        id="burguer-bar"
+      />
+      <div
+        id="burguer-bar"
+      />
+    </label>
+  </div>
+  <div
+    className="c2"
+  >
+    <a
+      className="c3 c4"
+      height="100%"
+      href="/"
+      width="100%"
+    >
+      Default Starter
+    </a>
+    <a
+      className="c3 c4"
+      height="100%"
+      href="/about"
+      width="100%"
+    >
+      About
+    </a>
+    <a
+      className="c3 c4"
+      height="100%"
+      href="/work"
+      width="100%"
+    >
+      Work
+    </a>
+  </div>
+  <button
+    className="sc-AykKI c5"
+    data-testid="ripple-button"
+    onClick={[Function]}
+  >
+    Dark
+  </button>
+</nav>
+`;
