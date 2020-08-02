@@ -19,7 +19,6 @@ export const GatsbyLinkStyled = styled(Link)`
   border-top: 4px solid transparent;
   transition-duration: 0.2s;
   font-weight: bold;
-  opacity: 0.9;
 
   &:hover {
     opacity: 1;

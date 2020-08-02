@@ -3,21 +3,21 @@ import { render, fireEvent } from '@testing-library/react';
 import Layout from '../../src/components/layout';
 import * as Gatsby from 'gatsby';
 
-jest.mock('gatsby');
-
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
 
-beforeEach(() => {
-  useStaticQuery.mockImplementation(() => ({
-    site: {
-      siteMetadata: {
-        title: 'Testing Layout',
-      },
-    },
-  }));
-});
-
 describe('<Layout /> component tests', () => {
+  beforeEach(() => {
+    useStaticQuery.mockImplementation(() => ({
+      site: {
+        siteMetadata: {
+          title: 'Testing Layout',
+        },
+      },
+    }));
+  });
+
+  afterEach(() => jest.clearAllMocks());
+
   it('renders correctly the title and children components', () => {
     const { getByTestId, getByText } = render(
       <Layout>
