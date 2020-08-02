@@ -2,6 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 import { MEDIA_QUERY_MOBILE_LIMIT } from './variables';
 
 export const GlobalStyle = createGlobalStyle`
+  // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+  // h3 {
+  //   font-family: Roboto Slab, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+  //     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // }
+
 body {
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
@@ -9,6 +16,7 @@ body {
   min-height: 100vh;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
+
 
   /**
  * Shades of Purple Theme for Prism.js

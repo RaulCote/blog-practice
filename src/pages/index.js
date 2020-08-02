@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import PostLink from '../ui/post-link';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -54,7 +54,7 @@ const IndexPage = () => {
             <article key={slug}>
               <header>
                 <h3>
-                  <Link to={slug}>{title}</Link>
+                  <PostLink to={slug}>{title}</PostLink>
                 </h3>
                 <date>{date}</date>
               </header>
