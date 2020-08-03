@@ -5,9 +5,16 @@ import NavLink from '../ui/NavBar/NavLink';
 import BurguerMenu from '../ui/NavBar/BurguerMenu';
 import NavLinksContainer from '../ui/NavBar/NavLinksContainer';
 import ThemeToggler from './ThemeToggler';
+import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
 
 const Nav = styled.nav`
+  ${MEDIA_QUERY_MOBILE_LIMIT} {
+    height: 4em;
+    margin-bottom: 2em;
+  }
+
   height: 8vh;
+  margin-bottom: 5%;
 `;
 
 const NavBar = ({ siteTitle, toggleMode, isDarkMode }) => {

@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 export const GatsbyLinkStyled = styled(Link)`
   background-color: ${props => props.theme.colors.background};
-  color: ${props => props.theme.colors.textColor};
+  color: ${props => props.theme.colors.titles};
   cursor: pointer;
   height: ${props => props.height};
   outline: none;
@@ -55,8 +55,8 @@ const NavLink = ({
       activeStyle={
         !isResponsiveMenuOpen
           ? {
-              borderTop: `4px solid ${theme?.colors?.textColor}`,
-              color: theme?.colors?.textColorHover,
+              borderTop: `4px solid ${theme?.colors?.titles}`,
+              color: theme?.colors?.titles,
               // textShadow: '0 0 1px black',
             }
           : {}

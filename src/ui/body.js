@@ -72,7 +72,7 @@ body {
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: #1e1e3f;
+    background: #29284A;
   }
 
   /* Inline code */

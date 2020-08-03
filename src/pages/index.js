@@ -21,6 +21,9 @@ const IndexPage = () => {
             excerpt
             fields {
               slug
+              readingTime {
+                text
+              }
             }
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
@@ -39,24 +42,31 @@ const IndexPage = () => {
 
   const { edges: blogPosts } = data.allMarkdownRemark;
 
+  console.log('blogPosts::::: ', blogPosts);
+
   return (
     <Layout>
       <SEO title={'Home'} />
       <section>
         {blogPosts.map(({ node }) => {
           const {
-            fields: { slug },
+            fields: {
+              slug,
+              readingTime: { text: displayReadingTime },
+            },
             frontmatter: { date, title },
             excerpt,
           } = node;
 
           return (
-            <article key={slug}>
+            <article key={slug} css={'margin-bottom: 3em'}>
               <header>
-                <h3>
-                  <PostLink to={slug}>{title}</PostLink>
-                </h3>
-                <date>{date}</date>
+                <PostLink to={slug}>{title}</PostLink>
+                <span css={'font-size: 0.85em; font-weight: bold'}>{date}</span>
+                <span css={'font-size: 0.85em; font-weight: bold'}> - </span>
+                <span css={'font-size: 0.85em; font-weight: bold'}>
+                  {displayReadingTime}
+                </span>
               </header>
               <p dangerouslySetInnerHTML={{ __html: excerpt }} />
             </article>

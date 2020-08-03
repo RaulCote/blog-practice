@@ -28,7 +28,6 @@ exports[`NavBar renders correctly 1`] = `
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
   font-weight: bold;
-  opacity: 0.9;
 }
 
 .c4:hover {

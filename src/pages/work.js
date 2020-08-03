@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import PostLink from '../ui/post-link';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -59,7 +60,7 @@ const WorkPage = () => {
             <article key={slug}>
               <header>
                 <h3>
-                  <Link to={node.fields.slug}>{title}</Link>
+                  <PostLink to={node.fields.slug}>{title}</PostLink>
                 </h3>
                 <date>{date}</date>
               </header>

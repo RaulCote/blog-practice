@@ -1,9 +1,10 @@
 const lightTheme = {
   colors: {
     background: '#F3F5F7',
+    titles: '#233559',
     cardBackground: '#E5E9F0',
     buttonBackground: '#5E81AC',
-    textColor: '#2E3440',
+    textColor: '#1C2A45',
     buttonColor: '#ECEFF4',
     rippleEffect: '#0A119D',
     changeModeEffect: '#CBF1FF',

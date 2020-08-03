@@ -8,6 +8,7 @@ import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
 const StyledRippleButton = styled(Button)`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
     width: 20%;
+    height: 4em;
   }
 
   font-size: 1em;

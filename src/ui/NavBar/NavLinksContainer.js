@@ -14,6 +14,7 @@ const NavLinksContainer = styled.div`
 
   ${MEDIA_QUERY_MOBILE_FROM} {
     max-width: ${MAX_WIDTH_CONTAINER};
+    width: 70%;
     margin: ${MARGIN_CONTAINER};
   }
 
