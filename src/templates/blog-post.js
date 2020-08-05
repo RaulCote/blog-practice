@@ -20,7 +20,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     ' page context :::: ',
     pageContext,
     'readingTime ::: ',
-    displayReadingTime
+    displayReadingTime,
+    'html :::: ',
+    html
   );
 
   return (
