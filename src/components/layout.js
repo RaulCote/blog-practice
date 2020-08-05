@@ -20,7 +20,8 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const appIsLiveOnBrowser = typeof window !== undefined;
+  const appIsLiveOnBrowser =
+    typeof window !== undefined && typeof window !== 'undefined';
 
   const [isDarkMode, setDarkMode] = React.useState(() => {
     const themeStored = appIsLiveOnBrowser
