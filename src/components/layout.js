@@ -24,7 +24,10 @@ const Layout = ({ children }) => {
 
   const [isDarkMode, setDarkMode] = React.useState(() => {
     if (appIsLiveOnBrowser) {
-      const themeStored = localStorage.getItem('isDarkMode');
+      const themeStored = localStorage
+        ? localStorage.getItem('isDarkMode')
+        : false;
+
       return themeStored === 'true' ? true : false;
     }
   });
