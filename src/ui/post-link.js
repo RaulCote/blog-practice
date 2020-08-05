@@ -9,7 +9,7 @@ const StyledH3 = styled.h3`
   font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none;
-  color: ${props => props.theme.colors.textColor};
+  color: ${props => props.theme.colors.titles};
 `;
 
 const StyledLink = styled(Link)`

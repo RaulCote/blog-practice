@@ -56,8 +56,6 @@ const NavLink = ({
         !isResponsiveMenuOpen
           ? {
               borderTop: `4px solid ${theme?.colors?.titles}`,
-              color: theme?.colors?.titles,
-              // textShadow: '0 0 1px black',
             }
           : {}
       }
