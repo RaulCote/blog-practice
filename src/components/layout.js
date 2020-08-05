@@ -23,13 +23,11 @@ const Layout = ({ children }) => {
   const appIsLiveOnBrowser = typeof window !== undefined;
 
   const [isDarkMode, setDarkMode] = React.useState(() => {
-    if (appIsLiveOnBrowser) {
-      const themeStored = localStorage
-        ? localStorage.getItem('isDarkMode')
-        : false;
+    const themeStored = appIsLiveOnBroser
+      ? localStorage.getItem('isDarkMode')
+      : false;
 
-      return themeStored === 'true' ? true : false;
-    }
+    return themeStored === 'true' ? true : false;
   });
 
   React.useEffect(() => {
