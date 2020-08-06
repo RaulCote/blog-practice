@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
   const appIsLiveOnBrowser =
     typeof window !== undefined && typeof window !== 'undefined';
 
+  const [key, forceUpdate] = React.useState(0);
   const [isDarkMode, setDarkMode] = React.useState(() => {
     const themeStored = appIsLiveOnBrowser
       ? localStorage.getItem('isDarkMode')
@@ -37,8 +38,14 @@ const Layout = ({ children }) => {
     }
   }, [isDarkMode, appIsLiveOnBrowser]);
 
-  const currentTheme = isDarkMode ? darkTheme : lightTheme;
+  React.useEffect(() => {
+    // let react take care of dynamic styles
+    forceUpdate(1);
+    // after mounting, remove the class from body
+    document.body.classList.remove('dark');
+  }, []);
 
+  const currentTheme = isDarkMode ? darkTheme : lightTheme;
   const toggleMode = () => setDarkMode(!isDarkMode);
 
   return (
