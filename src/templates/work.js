@@ -18,7 +18,7 @@ const WorkPostTemplate = ({ data }) => {
         <h1>{title}</h1>
         <date>{date}</date>
         <a href={link}>{link}</a>
-        <p dangerouslySetInnerHTML={{ __html: html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
     </Layout>
   );
