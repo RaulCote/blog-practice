@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <h1>{title}</h1>
         <date>{date}</date>
         <h5>{displayReadingTime}</h5>
-        <p dangerouslySetInnerHTML={{ __html: html }} />
+        <p dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </article>
 
       <nav>
