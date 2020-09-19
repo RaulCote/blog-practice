@@ -10,8 +10,9 @@ import { createElement } from 'react';
 const applyDarkModeClass = `
 (function() {
   try {
-    var mode = localStorage.getItem('theme');
-    if (mode === 'dark') {
+    const mode = localStorage.getItem('isDarkMode');
+    if (mode === 'true') {
+      console.log('the mode is coming from localStorage ::: ', mode)
 			document.body.classList.add('dark');
 		}
   } catch (e) {}
@@ -19,7 +20,6 @@ const applyDarkModeClass = `
 `;
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  console.log('onRenderBody is launching!');
   const script = createElement('script', {
     dangerouslySetInnerHTML: {
       __html: applyDarkModeClass,
