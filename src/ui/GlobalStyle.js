@@ -3,7 +3,7 @@ import { MEDIA_QUERY_MOBILE_LIMIT } from './variables';
 import darkTheme from '../themes/dark';
 import { NavLinkStyled } from './NavBar/NavLink';
 import { RippleButtonStyled } from './RippleButton';
-import { postLinkStyled, StyledLink } from './PostLink';
+import { PostLinkStyled } from './PostLink';
 
 export const GlobalStyle = createGlobalStyle`
   // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
@@ -22,11 +22,7 @@ body.dark {
     color: ${darkTheme.colors.titles};
   }
   
-  ${postLinkStyled} {
-    color: ${darkTheme.colors.titles};
-  }
-
-  ${StyledLink} {
+  ${PostLinkStyled} {
     color: ${darkTheme.colors.titles};
   }
 

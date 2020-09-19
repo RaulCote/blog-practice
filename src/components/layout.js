@@ -66,6 +66,7 @@ const Layout = ({ children }) => {
           siteTitle={data.site.siteMetadata.title}
           toggleMode={toggleMode}
           isDarkMode={isDarkMode}
+          key={mounted}
         />
         <div
           style={{
