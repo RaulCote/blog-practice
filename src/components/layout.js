@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
 
   const currentTheme =
     !mounted && appIsLiveOnBrowser && document.body.classList[0] === 'dark'
-      ? true
+      ? darkTheme
       : mounted && isDarkMode
       ? darkTheme
       : lightTheme;
