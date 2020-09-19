@@ -66,7 +66,10 @@ const Layout = ({ children }) => {
       ? darkTheme
       : lightTheme;
 
-  console.log('Rendering CURRENT-THEME ::::: ', currentTheme);
+  console.log(
+    'Rendering CURRENT-THEME ::::: dark :::: ',
+    currentTheme === darkTheme
+  );
 
   const toggleMode = () => setDarkMode(!isDarkMode);
 
