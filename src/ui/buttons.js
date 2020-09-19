@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+/**
+ * unused
+ */
+
 export const Button = styled.button`
-  background-color: ${props => props.theme.colors.buttonBackground};
   border-radius: 4%;
   border: 0px solid transparent;
-  color: ${props => props.theme.colors.textColor};
   cursor: pointer;
   font-size: 0.85em;
   font-weight: 600;

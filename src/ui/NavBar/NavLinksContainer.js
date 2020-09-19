@@ -9,7 +9,6 @@ import {
 } from '../../ui/variables';
 
 const NavLinksContainer = styled.div`
-  background-color: ${props => props.theme.colors.background};
   // box-shadow: 0 0 3px 1px ${props => props.theme.colors.shadowColor};
 
   ${MEDIA_QUERY_MOBILE_FROM} {
@@ -21,12 +20,12 @@ const NavLinksContainer = styled.div`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
     width: 0%;
     height: 100vh;
-    transition-duration: 0.2s;
+    background-color: ${props => props.theme.colors.background};
+
     display: flex;
     flex-direction: column;
 
     ${GatsbyLinkStyled} {
-      color: transparent;
       display: none;
     }
 

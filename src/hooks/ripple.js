@@ -32,7 +32,7 @@ export const RippleEffect = styled.span`
   width: 2px;
   height: 2px;
   transform: scale(0);
-  background: ${props => props.theme.colors.rippleEffect};
+  background-color: ${props => props.theme.colors.rippleEffect};
   animation: ${ripple} ${props => props.duration} ease-out;
 `;
 
@@ -72,4 +72,3 @@ function useDebouncedRippleCleanUp(rippleCount, duration, cleanUpFunction) {
     return () => clearTimeout(bounce);
   }, [rippleCount, duration, cleanUpFunction]);
 }
-

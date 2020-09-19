@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useRippleEffect, RippleEffect } from '../hooks/ripple';
-import { Button } from '../ui/buttons';
 import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
 
-const StyledRippleButton = styled(Button)`
+const StyledRippleButton = styled.button`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
     width: 20%;
     height: 4em;
@@ -14,16 +13,21 @@ const StyledRippleButton = styled(Button)`
   font-size: 1em;
   overflow: hidden;
   border-radius: 0%;
-  background-color: ${props => props.theme.colors.background};
+  background-color: inherit;
+  color: inherit;
   position: absolute;
   top: 0;
   right: 0;
   height: 8vh;
   width: 10%;
-  transition-duration: 0.2s;
+  border: 0px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  padding: 0.5em;
+  text-decoration: none;
 
   &:hover {
-    // transform: scale(1.1);
     opacity: 1;
     color: ${props => props.theme.colors.textColorHover};
     background-color: ${props => props.theme.colors.backgroundHover};

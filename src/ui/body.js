@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { MEDIA_QUERY_MOBILE_LIMIT } from './variables';
 import darkTheme from '../themes/dark';
+import { GatsbyLinkStyled } from './NavBar/NavLink';
 export const GlobalStyle = createGlobalStyle`
   // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
@@ -13,6 +14,12 @@ body.dark {
   background-color: ${darkTheme.colors.background};
   color: ${darkTheme.colors.textColor};
   transition-duration: 0s;
+
+  ${GatsbyLinkStyled} {
+    color: ${darkTheme.colors.titles};
+    border-top: ${darkTheme.colors.textColor};
+
+  }
 }
 
 body {

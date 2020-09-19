@@ -4,7 +4,6 @@ import styled, { ThemeContext } from 'styled-components';
 import { Link } from 'gatsby';
 
 export const GatsbyLinkStyled = styled(Link)`
-  /* background-color: ${props => props.theme.colors.background}; */
   color: ${props => props.theme.colors.titles};
   cursor: pointer;
   height: ${props => props.height};
@@ -17,7 +16,6 @@ export const GatsbyLinkStyled = styled(Link)`
   justify-content: center;
   align-items: center;
   border-top: 4px solid transparent;
-  transition-duration: 0.2s;
   font-weight: bold;
 
   &:hover {
