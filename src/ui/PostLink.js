@@ -12,9 +12,9 @@ export const PostLinkStyled = styled.h3`
   color: ${props => props.theme.colors.titles};
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: inherit;
+  color: ${props => props.theme.colors.titles};
 
   &:hover {
     text-decoration: underline;
