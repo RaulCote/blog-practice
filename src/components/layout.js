@@ -28,16 +28,8 @@ const Layout = ({ children }) => {
       ? localStorage.getItem('isDarkMode')
       : false;
 
-    console.log('Layout :::: themeStored ::::: isDarkMode :::: ', themeStored);
-
     return themeStored === 'true' ? true : false;
   });
-
-  // React.useEffect(() => {
-  //   if (appIsLiveOnBrowser) {
-  //     localStorage.setItem('isDarkMode', `${isDarkMode}`);
-  //   }
-  // }, [isDarkMode, appIsLiveOnBrowser]);
 
   React.useEffect(() => {
     if (
@@ -46,15 +38,14 @@ const Layout = ({ children }) => {
       document.body.classList[0] === 'dark'
     ) {
       document.body.classList.remove('dark');
+      setDarkMode(true);
     }
-    setDarkMode(true);
     setMounted(1);
   }, []);
 
   const currentTheme =
-    !mounted && appIsLiveOnBrowser && document.body.classList[0] === 'dark'
-      ? darkTheme
-      : mounted && isDarkMode
+    (!mounted && appIsLiveOnBrowser && document.body.classList[0] === 'dark') ||
+    (mounted && isDarkMode)
       ? darkTheme
       : lightTheme;
 
