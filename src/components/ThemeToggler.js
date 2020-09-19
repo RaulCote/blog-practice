@@ -12,7 +12,7 @@ const ThemeToggler = ({ toggleMode }) => {
   return (
     <>
       <RippleButton onClick={toggleMode} testId={'ripple-button'}>
-        {window.__loaded ? toggleText : null}
+        {window?.__loaded ? toggleText : null}
       </RippleButton>
     </>
   );
