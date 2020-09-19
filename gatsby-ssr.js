@@ -12,11 +12,9 @@ const applyDarkModeClass = `
   try {
     const mode = localStorage.getItem('isDarkMode');
     if (mode === 'true') {
-      console.log('the mode is coming from localStorage ::: ', mode)
       document.body.classList.add('dark');
       
 		}
-    window.__loaded = true;
   } catch (e) {
     console.log('gatsby-ssr ::::: error :::: ', e);
   }

@@ -64,9 +64,7 @@ const Layout = ({ children }) => {
         <NavBar
           siteTitle={data.site.siteMetadata.title}
           toggleMode={toggleMode}
-          isDarkMode={isDarkMode}
           key={mounted}
-          mounted={currentTheme}
         />
         <div
           style={{

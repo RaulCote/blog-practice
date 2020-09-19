@@ -20,7 +20,6 @@ const ThemeToggler = ({ toggleMode }) => {
 
 ThemeToggler.propTypes = {
   toggleMode: PropTypes.func.isRequired,
-  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default ThemeToggler;

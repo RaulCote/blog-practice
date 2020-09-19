@@ -59,9 +59,7 @@ const WorkPage = () => {
           return (
             <article key={slug}>
               <header>
-                <h3>
-                  <PostLink to={node.fields.slug}>{title}</PostLink>
-                </h3>
+                <PostLink to={node.fields.slug}>{title}</PostLink>
                 <date>{date}</date>
               </header>
               <p dangerouslySetInnerHTML={{ __html: excerpt }} />
