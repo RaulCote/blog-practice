@@ -28,14 +28,16 @@ const Layout = ({ children }) => {
       ? localStorage.getItem('isDarkMode')
       : false;
 
+    console.log('Layout :::: themeStored ::::: isDarkMode :::: ', themeStored);
+
     return themeStored === 'true' ? true : false;
   });
 
-  React.useEffect(() => {
-    if (appIsLiveOnBrowser) {
-      localStorage.setItem('isDarkMode', `${isDarkMode}`);
-    }
-  }, [isDarkMode, appIsLiveOnBrowser]);
+  // React.useEffect(() => {
+  //   if (appIsLiveOnBrowser) {
+  //     localStorage.setItem('isDarkMode', `${isDarkMode}`);
+  //   }
+  // }, [isDarkMode, appIsLiveOnBrowser]);
 
   React.useEffect(() => {
     if (
@@ -56,7 +58,13 @@ const Layout = ({ children }) => {
       ? darkTheme
       : lightTheme;
 
-  const toggleMode = () => setDarkMode(!isDarkMode);
+  const toggleMode = () => {
+    setDarkMode(!isDarkMode);
+
+    if (appIsLiveOnBrowser) {
+      localStorage.setItem('isDarkMode', `${!isDarkMode}`);
+    }
+  };
 
   return (
     <>
