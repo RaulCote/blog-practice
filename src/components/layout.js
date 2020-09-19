@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
           toggleMode={toggleMode}
           isDarkMode={isDarkMode}
           key={mounted}
-          mounted={mounted}
+          mounted={currentTheme}
         />
         <div
           style={{

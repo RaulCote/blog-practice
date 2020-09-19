@@ -7,14 +7,11 @@ import darkTheme from '../themes/dark';
 const ThemeToggler = ({ toggleMode, mounted }) => {
   const theme = useContext(ThemeContext);
 
-  console.log('mounted :::::::::::::: theme toggler :::: ', mounted);
-  const toggleText =
-    (typeof window !== undefined &&
-      typeof window !== 'undefined' &&
-      document.body.classList[0] === 'dark') ||
-    theme === darkTheme
-      ? 'Light'
-      : 'Dark';
+  console.log(
+    'mounted :::::::::::::: theme toggler :::: ',
+    mounted === darkTheme
+  );
+  const toggleText = currentTheme === darkTheme ? 'Light' : 'Dark';
 
   return (
     <>
