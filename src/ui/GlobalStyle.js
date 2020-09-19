@@ -26,7 +26,7 @@ body.dark {
     color: ${darkTheme.colors.titles};
   }
 
-  ${styledLink} {
+  ${StyledLink} {
     color: ${darkTheme.colors.titles};
   }
 
