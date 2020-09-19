@@ -41,6 +41,7 @@ const RippleButton = ({
   onClick,
   testId,
   width,
+  id,
 }) => {
   const [ripples, addRipples] = useRippleEffect(duration, onClick);
 
@@ -53,6 +54,7 @@ const RippleButton = ({
       width={width}
       height={height}
       data-testid={testId}
+      id={id}
     >
       {children}
       {ripples.map((ripple, key) => (

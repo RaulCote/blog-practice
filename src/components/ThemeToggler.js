@@ -15,7 +15,11 @@ const ThemeToggler = ({ toggleMode, mounted }) => {
 
   return (
     <>
-      <RippleButton onClick={toggleMode} testId={'ripple-button'}>
+      <RippleButton
+        onClick={toggleMode}
+        testId={'ripple-button'}
+        id={'theme-toggler-button'}
+      >
         {toggleText}
       </RippleButton>
     </>

@@ -13,7 +13,11 @@ const applyDarkModeClass = `
     const mode = localStorage.getItem('isDarkMode');
     if (mode === 'true') {
       console.log('the mode is coming from localStorage ::: ', mode)
-			document.body.classList.add('dark');
+      document.body.classList.add('dark');
+      
+      const themeToggler = document.getElementById('theme-toggler-button');
+
+      themeToggler.innerText = 'Light';
 		}
   } catch (e) {}
 })();
