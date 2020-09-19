@@ -14,12 +14,11 @@ const applyDarkModeClass = `
     if (mode === 'true') {
       console.log('the mode is coming from localStorage ::: ', mode)
       document.body.classList.add('dark');
-      
-      const themeToggler = document.getElementById('theme-toggler-button');
-
-      themeToggler.innerText = 'Light';
+      document.getElementById('theme-toggler-button').innerText = 'Light';
 		}
-  } catch (e) {}
+  } catch (e) {
+    console.log('gatsby-ssr ::::: error :::: ', e);
+  }
 })();
 `;
 
