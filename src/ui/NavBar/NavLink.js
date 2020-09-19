@@ -4,7 +4,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { Link } from 'gatsby';
 
 export const GatsbyLinkStyled = styled(Link)`
-  background-color: ${props => props.theme.colors.background};
+  /* background-color: ${props => props.theme.colors.background}; */
   color: ${props => props.theme.colors.titles};
   cursor: pointer;
   height: ${props => props.height};

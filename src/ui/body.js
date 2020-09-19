@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { MEDIA_QUERY_MOBILE_LIMIT } from './variables';
-
+import { darkTheme } from '../themes/dark';
 export const GlobalStyle = createGlobalStyle`
   // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
@@ -8,6 +8,11 @@ export const GlobalStyle = createGlobalStyle`
   //   font-family: Roboto Slab, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
   //     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   // }
+
+body.dark {
+  background-color: ${darkTheme.colors.background};
+  color: ${darkTheme.colors.textColor};
+}
 
 body {
   background-color: ${props => props.theme.colors.background};
