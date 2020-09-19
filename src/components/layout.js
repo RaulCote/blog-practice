@@ -38,10 +38,14 @@ const Layout = ({ children }) => {
     }
   }, [isDarkMode, appIsLiveOnBrowser]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     // let react take care of dynamic styles
     // forceUpdate(1);
-    if (appIsLiveOnBrowser && document.body.classList[0] === 'dark') {
+    if (
+      typeof window !== undefined &&
+      typeof window !== 'undefined' &&
+      document.body.classList[0] === 'dark'
+    ) {
       setDarkMode('true');
       console.log(
         'what there are here before remove ::: dark is ::: ',
@@ -55,7 +59,7 @@ const Layout = ({ children }) => {
     }
     // after mounting, remove the class from body
     // document.body.classList.remove('dark');
-  }, [appIsLiveOnBrowser]);
+  }, []);
 
   const currentTheme = isDarkMode ? darkTheme : lightTheme;
   const toggleMode = () => setDarkMode(!isDarkMode);
