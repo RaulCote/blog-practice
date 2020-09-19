@@ -17,7 +17,7 @@ const Nav = styled.nav`
   margin-bottom: 5%;
 `;
 
-const NavBar = ({ siteTitle, toggleMode, isDarkMode }) => {
+const NavBar = ({ siteTitle, toggleMode, isDarkMode, mounted }) => {
   const [isResponsiveMenuOpen, setToggleResponsiveMenu] = useState(false);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const NavBar = ({ siteTitle, toggleMode, isDarkMode }) => {
           Work
         </NavLink>
       </NavLinksContainer>
-      <ThemeToggler toggleMode={toggleMode} isDarkMode={isDarkMode} />
+      <ThemeToggler toggleMode={toggleMode} mounted={mounted} />
     </Nav>
   );
 };
