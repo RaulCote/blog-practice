@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     }
   }, [isDarkMode, appIsLiveOnBrowser]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     // let react take care of dynamic styles
     // forceUpdate(1);
     if (
@@ -46,16 +46,16 @@ const Layout = ({ children }) => {
       typeof window !== 'undefined' &&
       document.body.classList[0] === 'dark'
     ) {
-      setMounted(true);
-      // console.log(
-      //   'what there are here before remove ::: dark is ::: ',
-      //   document.body.classList[0] === 'dark'
-      // );
+      console.log(
+        'what there are here before remove ::: dark is ::: ',
+        document.body.classList[0] === 'dark'
+      );
       document.body.classList.remove('dark');
-      // console.log(
-      //   'what there are here ::: ',
-      //   document.body.classList[0] === 'dark'
-      // );
+      console.log(
+        'what there are here ::: ',
+        document.body.classList[0] === 'dark'
+      );
+      setMounted(true);
     }
   }, []);
 
@@ -65,6 +65,8 @@ const Layout = ({ children }) => {
       : mounted && isDarkMode
       ? darkTheme
       : lightTheme;
+
+  console.log('Rendering CURRENT-THEME ::::: ', currentTheme);
 
   const toggleMode = () => setDarkMode(!isDarkMode);
 
