@@ -14,7 +14,8 @@ const applyDarkModeClass = `
     if (mode === 'true') {
       console.log('the mode is coming from localStorage ::: ', mode)
       document.body.classList.add('dark');
-      document.getElementById('theme-toggler-button').innerText = 'Light';
+      
+      window.__loaded = true;
 		}
   } catch (e) {
     console.log('gatsby-ssr ::::: error :::: ', e);

@@ -4,23 +4,15 @@ import RippleButton from '../ui/RippleButton';
 import { ThemeContext } from 'styled-components';
 import darkTheme from '../themes/dark';
 
-const ThemeToggler = ({ toggleMode, mounted }) => {
+const ThemeToggler = ({ toggleMode }) => {
   const theme = useContext(ThemeContext);
 
-  console.log(
-    'mounted :::::::::::::: theme toggler :::: ',
-    mounted === darkTheme
-  );
-  const toggleText = mounted === darkTheme ? 'Light' : 'Dark';
+  const toggleText = theme === darkTheme ? 'Light' : 'Dark';
 
   return (
     <>
-      <RippleButton
-        onClick={toggleMode}
-        testId={'ripple-button'}
-        id={'theme-toggler-button'}
-      >
-        {toggleText}
+      <RippleButton onClick={toggleMode} testId={'ripple-button'}>
+        {window.__loaded ? toggleText : null}
       </RippleButton>
     </>
   );
