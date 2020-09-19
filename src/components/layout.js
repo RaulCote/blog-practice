@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
     }
   }, [isDarkMode, appIsLiveOnBrowser]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (
       typeof window !== undefined &&
       typeof window !== 'undefined' &&
