@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   const appIsLiveOnBrowser =
     typeof window !== undefined && typeof window !== 'undefined';
 
-  // const [key, forceUpdate] = React.useState(0);
+  const [mounted, setMounted] = React.useState(false);
   const [isDarkMode, setDarkMode] = React.useState(() => {
     const themeStored = appIsLiveOnBrowser
       ? localStorage.getItem('isDarkMode')
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     }
   }, [isDarkMode, appIsLiveOnBrowser]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     // let react take care of dynamic styles
     // forceUpdate(1);
     if (
@@ -46,22 +46,26 @@ const Layout = ({ children }) => {
       typeof window !== 'undefined' &&
       document.body.classList[0] === 'dark'
     ) {
-      setDarkMode('true');
-      console.log(
-        'what there are here before remove ::: dark is ::: ',
-        document.body.classList[0] === 'dark'
-      );
+      setMounted(true);
+      // console.log(
+      //   'what there are here before remove ::: dark is ::: ',
+      //   document.body.classList[0] === 'dark'
+      // );
       document.body.classList.remove('dark');
-      console.log(
-        'what there are here ::: ',
-        document.body.classList[0] === 'dark'
-      );
+      // console.log(
+      //   'what there are here ::: ',
+      //   document.body.classList[0] === 'dark'
+      // );
     }
-    // after mounting, remove the class from body
-    // document.body.classList.remove('dark');
   }, []);
 
-  const currentTheme = isDarkMode ? darkTheme : lightTheme;
+  const currentTheme =
+    !mounted && document.body.classList[0] === 'dark'
+      ? true
+      : mounted && isDarkMode
+      ? darkTheme
+      : lightTheme;
+
   const toggleMode = () => setDarkMode(!isDarkMode);
 
   return (
