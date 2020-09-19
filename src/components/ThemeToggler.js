@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import RippleButton from '../ui/RippleButton';
+import { ThemeContext } from 'styled-components';
+import darkTheme from '../themes/dark';
 
-const ThemeToggler = ({ toggleMode, isDarkMode }) => {
-  const toggleToolTip = isDarkMode
-    ? 'Change to Light Theme'
-    : 'Change to Dark Theme';
+const ThemeToggler = ({ toggleMode }) => {
+  const theme = useContext(ThemeContext);
+
+  const toggleText = theme === darkTheme ? 'Light' : 'Dark';
 
   return (
     <>
       <RippleButton onClick={toggleMode} testId={'ripple-button'}>
-        {isDarkMode ? 'Light' : 'Dark'}
+        {toggleText}
       </RippleButton>
     </>
   );
