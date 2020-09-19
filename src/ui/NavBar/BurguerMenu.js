@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MEDIA_QUERY_MOBILE_LIMIT } from '../../ui/variables';
 
-const BurguerIcon = styled.div`
+const BurguerMenuStyled = styled.div`
   display: none;
 
   ${MEDIA_QUERY_MOBILE_LIMIT} {
@@ -30,7 +30,7 @@ const BurguerIcon = styled.div`
       width: 22px;
       margin: 6px 0px;
       height: 2px;
-      background-color: ${props => props.theme.colors.textColor};
+      background-color: ${props => props.theme.colors.titles};
       transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1),
         color 1s cubic-bezier(0.23, 1, 0.32, 1);
       top: 50%;
@@ -61,7 +61,7 @@ const BurguerIcon = styled.div`
 `;
 
 const BurguerMenu = ({ isResponsiveMenuOpen, setToggleResponsiveMenu }) => (
-  <BurguerIcon>
+  <BurguerMenuStyled>
     <input
       type={'checkbox'}
       id={'burguer-check'}
@@ -72,7 +72,7 @@ const BurguerMenu = ({ isResponsiveMenuOpen, setToggleResponsiveMenu }) => (
       <div id={'burguer-bar'} />
       <div id={'burguer-bar'} />
     </label>
-  </BurguerIcon>
+  </BurguerMenuStyled>
 );
 
 BurguerMenu.propTypes = {

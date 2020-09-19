@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RippleButton from '../ui/ripple-button';
+import RippleButton from '../ui/RippleButton';
 
 const ThemeToggler = ({ toggleMode, isDarkMode }) => {
   const toggleToolTip = isDarkMode
     ? 'Change to Light Theme'
     : 'Change to Dark Theme';
-
-  // comment to test
 
   return (
     <>
@@ -20,6 +18,7 @@ const ThemeToggler = ({ toggleMode, isDarkMode }) => {
 
 ThemeToggler.propTypes = {
   toggleMode: PropTypes.func.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default ThemeToggler;

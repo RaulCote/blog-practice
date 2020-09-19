@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import PostLink from '../ui/post-link';
+import PostLink from '../ui/PostLink';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`

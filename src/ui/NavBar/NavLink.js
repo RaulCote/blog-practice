@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeContext } from 'styled-components';
 import { Link } from 'gatsby';
 
-export const GatsbyLinkStyled = styled(Link)`
+export const NavLinkStyled = styled(Link)`
   color: ${props => props.theme.colors.titles};
   cursor: pointer;
   height: ${props => props.height};
@@ -28,16 +28,6 @@ export const GatsbyLinkStyled = styled(Link)`
   }
 `;
 
-GatsbyLinkStyled.propTypes = {
-  activeStyle: PropTypes.shape({
-    borderTop: PropTypes.string,
-    fontWeight: PropTypes.string,
-    textShadow: PropTypes.string,
-  }),
-  height: PropTypes.string.isRequired,
-  width: PropTypes.string.isRequired,
-};
-
 const NavLink = ({
   to,
   width,
@@ -49,7 +39,7 @@ const NavLink = ({
   const theme = useContext(ThemeContext);
 
   return (
-    <GatsbyLinkStyled
+    <NavLinkStyled
       activeStyle={
         !isResponsiveMenuOpen
           ? {
@@ -63,7 +53,7 @@ const NavLink = ({
       width={width}
     >
       {children}
-    </GatsbyLinkStyled>
+    </NavLinkStyled>
   );
 };
 

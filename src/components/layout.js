@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import lightTheme from '../themes/light';
 import darkTheme from '../themes/dark';
-import { GlobalStyle } from '../ui/body';
+import { GlobalStyle } from '../ui/GlobalStyle';
 import NavBar from './NavBar';
 import './layout.css';
 
@@ -54,11 +54,6 @@ const Layout = ({ children }) => {
       : mounted && isDarkMode
       ? darkTheme
       : lightTheme;
-
-  console.log(
-    'Rendering CURRENT-THEME ::::: dark :::: ',
-    currentTheme === darkTheme
-  );
 
   const toggleMode = () => setDarkMode(!isDarkMode);
 

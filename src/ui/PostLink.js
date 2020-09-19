@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const StyledH3 = styled.h3`
+export const PostLinkStyled = styled.h3`
   font-family: Roboto Slab, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1.6rem;
@@ -14,7 +14,7 @@ const StyledH3 = styled.h3`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${props => props.theme.colors.titles};
+  color: inherit;
 
   &:hover {
     text-decoration: underline;
@@ -22,9 +22,9 @@ const StyledLink = styled(Link)`
 `;
 
 const PostLink = ({ children, to }) => (
-  <StyledH3>
+  <PostLinkStyled>
     <StyledLink to={to}>{children}</StyledLink>
-  </StyledH3>
+  </PostLinkStyled>
 );
 
 PostLink.propTypes = {

@@ -1,7 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { MEDIA_QUERY_MOBILE_LIMIT } from './variables';
 import darkTheme from '../themes/dark';
-import { GatsbyLinkStyled } from './NavBar/NavLink';
+import { NavLinkStyled } from './NavBar/NavLink';
+import { RippleButtonStyled } from './RippleButton';
+import { postLinkStyled } from './PostLink';
+
 export const GlobalStyle = createGlobalStyle`
   // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
@@ -15,14 +18,24 @@ body.dark {
   color: ${darkTheme.colors.textColor};
   transition-duration: 0s;
 
-  ${GatsbyLinkStyled} {
+  ${NavLinkStyled}, ${RippleButtonStyled}, ${postLinkStyled} {
     color: ${darkTheme.colors.titles};
-    border-top: ${darkTheme.colors.textColor};
+  }
 
+  #burguer-bar {
+    background-color: ${props => props.theme.colors.titles};
+  }
+
+  ${NavLinkStyled} {
+    border-top: ${darkTheme.colors.textColor};
   }
 }
 
 body {
+
+  ${NavLinkStyled} {
+
+  }
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
   transition-duration: 0.2s;

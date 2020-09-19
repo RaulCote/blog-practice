@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useRippleEffect, RippleEffect } from '../hooks/ripple';
 import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
 
-const StyledRippleButton = styled.button`
+export const RippleButtonStyled = styled.button`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
     width: 20%;
     height: 4em;
@@ -14,7 +14,7 @@ const StyledRippleButton = styled.button`
   overflow: hidden;
   border-radius: 0%;
   background-color: inherit;
-  color: inherit;
+  color: ${props => props.theme.colors.titles};
   position: absolute;
   top: 0;
   right: 0;
@@ -45,7 +45,7 @@ const RippleButton = ({
   const [ripples, addRipples] = useRippleEffect(duration, onClick);
 
   return (
-    <StyledRippleButton
+    <RippleButtonStyled
       onClick={e => {
         addRipples(e);
         onClick(e);
@@ -63,7 +63,7 @@ const RippleButton = ({
           duration={`${duration}ms`}
         />
       ))}
-    </StyledRippleButton>
+    </RippleButtonStyled>
   );
 };
 

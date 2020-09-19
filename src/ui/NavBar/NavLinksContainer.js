@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { GatsbyLinkStyled } from './NavLink';
+import { NavLinkStyled } from './NavLink';
 import {
   MARGIN_CONTAINER,
   MAX_WIDTH_CONTAINER,
@@ -25,7 +25,7 @@ const NavLinksContainer = styled.div`
     display: flex;
     flex-direction: column;
 
-    ${GatsbyLinkStyled} {
+    ${NavLinkStyled} {
       display: none;
     }
 
@@ -39,7 +39,7 @@ const NavLinksContainer = styled.div`
         width: 80%;
         z-index: 1;
 
-        ${GatsbyLinkStyled} {
+        ${NavLinkStyled} {
           display: flex;
           color: ${props => props.theme.colors.textColor};
           font-weight: bold;
