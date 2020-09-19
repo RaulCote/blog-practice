@@ -11,7 +11,7 @@ const ThemeToggler = ({ toggleMode, mounted }) => {
     'mounted :::::::::::::: theme toggler :::: ',
     mounted === darkTheme
   );
-  const toggleText = currentTheme === darkTheme ? 'Light' : 'Dark';
+  const toggleText = mounted === darkTheme ? 'Light' : 'Dark';
 
   return (
     <>
