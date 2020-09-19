@@ -18,15 +18,20 @@ body.dark {
   color: ${darkTheme.colors.textColor};
   transition-duration: 0s;
 
-  ${NavLinkStyled}, ${RippleButtonStyled}, ${postLinkStyled} {
+  ${RippleButtonStyled} {
+    color: ${darkTheme.colors.titles};
+  }
+  
+  ${postLinkStyled} {
     color: ${darkTheme.colors.titles};
   }
 
   #burguer-bar {
-    background-color: ${props => props.theme.colors.titles};
+    background-color: ${darkTheme.colors.titles};
   }
 
   ${NavLinkStyled} {
+    color: ${darkTheme.colors.titles};
     border-top: ${darkTheme.colors.textColor};
   }
 }
