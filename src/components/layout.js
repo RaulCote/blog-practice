@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   const appIsLiveOnBrowser =
     typeof window !== undefined && typeof window !== 'undefined';
 
-  const [mounted, setMounted] = React.useState(false);
+  const [mounted, setMounted] = React.useState(0);
   const [isDarkMode, setDarkMode] = React.useState(() => {
     const themeStored = appIsLiveOnBrowser
       ? localStorage.getItem('isDarkMode')
@@ -45,7 +45,8 @@ const Layout = ({ children }) => {
     ) {
       document.body.classList.remove('dark');
     }
-    setMounted(true);
+    setDarkMode(true);
+    setMounted(1);
   }, []);
 
   const currentTheme =
@@ -74,7 +75,7 @@ const Layout = ({ children }) => {
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <main key={mounted}>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
