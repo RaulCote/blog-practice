@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 
 export const NavLinkStyled = styled(Link)`
   color: ${props => props.theme.colors.titles};
-  background-color: ${props => props.theme.colors.background};
   cursor: pointer;
   height: ${props => props.height};
   outline: none;
