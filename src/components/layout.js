@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import lightTheme from '../themes/light';
 import darkTheme from '../themes/dark';
 import { GlobalStyle } from '../ui/body';
-import { AppContainer } from '../ui/app-container';
 import NavBar from './NavBar';
 import './layout.css';
 
@@ -39,24 +38,14 @@ const Layout = ({ children }) => {
   }, [isDarkMode, appIsLiveOnBrowser]);
 
   React.useLayoutEffect(() => {
-    // let react take care of dynamic styles
-    // forceUpdate(1);
     if (
       typeof window !== undefined &&
       typeof window !== 'undefined' &&
       document.body.classList[0] === 'dark'
     ) {
-      console.log(
-        'what there are here before remove ::: dark is ::: ',
-        document.body.classList[0] === 'dark'
-      );
       document.body.classList.remove('dark');
-      console.log(
-        'what there are here ::: ',
-        document.body.classList[0] === 'dark'
-      );
-      setMounted(true);
     }
+    setMounted(true);
   }, []);
 
   const currentTheme =

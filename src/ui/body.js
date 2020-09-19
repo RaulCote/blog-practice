@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 body.dark {
   background-color: ${darkTheme.colors.background};
   color: ${darkTheme.colors.textColor};
+  transition-duration: 0s;
 }
 
 body {
