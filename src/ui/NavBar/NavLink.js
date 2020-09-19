@@ -43,7 +43,7 @@ const NavLink = ({
       activeStyle={
         !isResponsiveMenuOpen
           ? {
-              borderTop: `4px solid ${theme?.colors?.titles}`,
+              borderTop: `4px solid ${theme.colors.titles}`,
             }
           : {}
       }
