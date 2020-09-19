@@ -9,8 +9,6 @@ import {
 } from '../../ui/variables';
 
 const NavLinksContainer = styled.div`
-  // box-shadow: 0 0 3px 1px ${props => props.theme.colors.shadowColor};
-
   ${MEDIA_QUERY_MOBILE_FROM} {
     max-width: ${MAX_WIDTH_CONTAINER};
     width: 70%;
@@ -48,7 +46,6 @@ const NavLinksContainer = styled.div`
         }
       `}
   }
-
 
   height: 8vh;
   align-items: center;

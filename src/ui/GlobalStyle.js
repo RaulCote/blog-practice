@@ -32,7 +32,6 @@ body.dark {
 
   ${NavLinkStyled} {
     color: ${darkTheme.colors.titles};
-    border-top: ${darkTheme.colors.textColor};
   }
 }
 

@@ -23,9 +23,6 @@ export const NavLinkStyled = styled(Link)`
     color: ${props => props.theme.colors.textColorHover};
     background-color: ${props => props.theme.colors.backgroundHover};
   }
-
-  &:active {
-  }
 `;
 
 const NavLink = ({
