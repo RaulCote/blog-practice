@@ -23,13 +23,18 @@ const Layout = ({ children }) => {
     typeof window !== undefined && typeof window !== 'undefined';
 
   const [mounted, setMounted] = React.useState(0);
-  const [isDarkMode, setDarkMode] = React.useState(() => {
-    const themeStored = appIsLiveOnBrowser
-      ? localStorage.getItem('isDarkMode')
-      : false;
+  const [theme, setTheme] = React.useState(() => {
+    const themeStored = appIsLiveOnBrowser ? window.__theme : 'light';
 
-    return themeStored === 'true' ? true : false;
+    return themeStored;
   });
+
+  React.useLayoutEffect(() => {
+    window.__setPreferedTheme = value => {
+      localStorage.setItem('theme', `${value}`);
+      setTheme(value);
+    };
+  }, []);
 
   React.useEffect(() => {
     if (
@@ -37,24 +42,22 @@ const Layout = ({ children }) => {
       typeof window !== 'undefined' &&
       document.body.classList[0] === 'dark'
     ) {
+      window.__setPreferedTheme('dark');
       document.body.classList.remove('dark');
-      setDarkMode(true);
     }
+
     setMounted(1);
   }, []);
 
   const currentTheme =
     (!mounted && appIsLiveOnBrowser && document.body.classList[0] === 'dark') ||
-    isDarkMode
+    theme === 'dark'
       ? darkTheme
       : lightTheme;
 
   const toggleMode = () => {
-    setDarkMode(!isDarkMode);
-
-    if (appIsLiveOnBrowser) {
-      localStorage.setItem('isDarkMode', `${!isDarkMode}`);
-    }
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    appIsLiveOnBrowser && window.__setPreferedTheme(newTheme);
   };
 
   return (

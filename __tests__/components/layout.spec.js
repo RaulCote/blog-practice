@@ -62,7 +62,7 @@ describe('<Layout /> component tests', () => {
 
   it(`will show directly on dark mode if user set it previously
     in another visit`, async () => {
-    window.localStorage.setItem('isDarkMode', true);
+    window.localStorage.setItem('theme', true);
 
     const { findByText } = render(
       <Layout>
@@ -72,6 +72,6 @@ describe('<Layout /> component tests', () => {
 
     expect(await findByText('Light')).toBeInTheDocument();
 
-    window.localStorage.removeItem('isDarkMode');
+    window.localStorage.removeItem('theme');
   });
 });
