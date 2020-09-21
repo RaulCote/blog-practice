@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { MEDIA_QUERY_HOVER_SUPPORTED } from './variables';
 
 export const PostLinkStyled = styled.h3`
   font-family: Roboto Slab, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -16,8 +17,10 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 
-  &:hover {
-    text-decoration: underline;
+  ${MEDIA_QUERY_HOVER_SUPPORTED} {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

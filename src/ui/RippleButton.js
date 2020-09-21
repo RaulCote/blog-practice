@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useRippleEffect, RippleEffect } from '../hooks/ripple';
-import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
+import {
+  MEDIA_QUERY_MOBILE_LIMIT,
+  MEDIA_QUERY_HOVER_SUPPORTED,
+} from '../ui/variables';
 
 export const RippleButtonStyled = styled.button`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
@@ -27,10 +30,12 @@ export const RippleButtonStyled = styled.button`
   padding: 0.5em;
   text-decoration: none;
 
-  &:hover {
-    opacity: 1;
-    color: ${props => props.theme.colors.textColorHover};
-    background-color: ${props => props.theme.colors.backgroundHover};
+  ${MEDIA_QUERY_HOVER_SUPPORTED} {
+    &:hover {
+      opacity: 1;
+      color: ${props => props.theme.colors.textColorHover};
+      background-color: ${props => props.theme.colors.backgroundHover};
+    }
   }
 `;
 
