@@ -6,6 +6,7 @@ import BurguerMenu from '../ui/NavBar/BurguerMenu';
 import NavLinksContainer from '../ui/NavBar/NavLinksContainer';
 import ThemeToggler from './ThemeToggler';
 import { MEDIA_QUERY_MOBILE_LIMIT } from '../ui/variables';
+import NavBarResponsiveCloseOverlay from '../ui/NavBar/NavBarResponsiveCloseOverlay';
 
 const Nav = styled.nav`
   ${MEDIA_QUERY_MOBILE_LIMIT} {
@@ -30,12 +31,14 @@ const NavBar = ({ siteTitle, toggleMode }) => {
     }
   }, [isResponsiveMenuOpen]);
 
+  const toggleResponsiveMenu = () => {
+    setToggleResponsiveMenu(!isResponsiveMenuOpen);
+  };
+
   return (
     <Nav>
       <BurguerMenu
-        setToggleResponsiveMenu={() =>
-          setToggleResponsiveMenu(!isResponsiveMenuOpen)
-        }
+        onToggle={toggleResponsiveMenu}
         isResponsiveMenuOpen={isResponsiveMenuOpen}
       />
       <NavLinksContainer isResponsiveMenuOpen={isResponsiveMenuOpen}>
@@ -50,6 +53,11 @@ const NavBar = ({ siteTitle, toggleMode }) => {
         </NavLink>
       </NavLinksContainer>
       <ThemeToggler toggleMode={toggleMode} />
+
+      <NavBarResponsiveCloseOverlay
+        onClick={toggleResponsiveMenu}
+        isResponsiveMenuOpen={isResponsiveMenuOpen}
+      />
     </Nav>
   );
 };

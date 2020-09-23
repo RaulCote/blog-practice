@@ -60,13 +60,13 @@ const BurguerMenuStyled = styled.div`
   }
 `;
 
-const BurguerMenu = ({ isResponsiveMenuOpen, setToggleResponsiveMenu }) => (
+const BurguerMenu = ({ isResponsiveMenuOpen, onToggle }) => (
   <BurguerMenuStyled>
     <input
       type={'checkbox'}
       id={'burguer-check'}
       checked={isResponsiveMenuOpen}
-      onChange={setToggleResponsiveMenu}
+      onChange={onToggle}
     />
     <label htmlFor={'burguer-check'}>
       <div id={'burguer-bar'} />
@@ -77,7 +77,7 @@ const BurguerMenu = ({ isResponsiveMenuOpen, setToggleResponsiveMenu }) => (
 
 BurguerMenu.propTypes = {
   isResponsiveMenuOpen: PropTypes.bool.isRequired,
-  setToggleResponsiveMenu: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default BurguerMenu;

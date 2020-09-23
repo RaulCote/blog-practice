@@ -16,18 +16,17 @@ const NavLinksContainer = styled.div`
   }
 
   ${MEDIA_QUERY_MOBILE_LIMIT} {
+    ${NavLinkStyled} {
+      display: none;
+    }
+
     width: 0%;
     height: 100vh;
     /* to apply open-close effect to responsive menu */
     transition-duration: 0.2s;
     background-color: ${props => props.theme.colors.background};
-
     display: flex;
     flex-direction: column;
-
-    ${NavLinkStyled} {
-      display: none;
-    }
 
     ${props =>
       props.isResponsiveMenuOpen &&
