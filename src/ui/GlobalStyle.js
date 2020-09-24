@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 body.dark {
   background-color: ${darkTheme.colors.background};
   color: ${darkTheme.colors.textColor};
-  transition-duration: 0s;
+  // transition-duration: 0.2s;
 
   ${RippleButtonStyled} {
     color: ${darkTheme.colors.titles};
@@ -42,7 +42,7 @@ body {
   }
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
-  // transition-duration: 0.2s;
+  transition-duration: 0.2s;
   min-height: 100vh;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
