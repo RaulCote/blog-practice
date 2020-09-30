@@ -78,11 +78,7 @@ const Layout = ({ children }) => {
           }}
         >
           <main key={mounted}>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <footer>{/* do I need a footer ? */}</footer>
         </div>
       </ThemeProvider>
     </>

@@ -7,7 +7,8 @@ const OverlayStyled = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  background-color: transparent;
+  transition-duration: 0.2s;
+  background-color: rgba(0, 0, 0, 0.02);
 `;
 
 const NavBarResponsiveCloseOverlay = ({ isResponsiveMenuOpen, onClick }) => {
