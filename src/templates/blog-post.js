@@ -1,7 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import NavFooterPost from '../ui/NavFooterPost';
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const {
@@ -35,24 +36,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
 
-      <nav>
-        <ul>
-          {previousBlogPost && (
-            <li>
-              <Link to={previousBlogPost.fields.slug} rel={'prev'}>
-                ← {previousBlogPost.frontmatter.title}
-              </Link>
-            </li>
-          )}
-          {nextBlogPost && (
-            <li>
-              <Link to={nextBlogPost.fields.slug} rel={'next'}>
-                {nextBlogPost.frontmatter.title} →
-              </Link>
-            </li>
-          )}
-        </ul>
-      </nav>
+      <NavFooterPost
+        previousBlogPost={previousBlogPost}
+        nextBlogPost={nextBlogPost}
+      />
     </Layout>
   );
 };
