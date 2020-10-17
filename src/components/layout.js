@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
   React.useLayoutEffect(() => {
     window.__setPreferedTheme = value => {
       localStorage.setItem('theme', `${value}`);
+      window.__theme = value;
       setTheme(value);
     };
   }, []);
