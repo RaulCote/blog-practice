@@ -44,6 +44,12 @@ body {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
 
+  /* Preference over Roboto Slab for 'special items' */
+  h1, h2, h3, h4, h5, a, nav, date, span {
+    font-family: Roboto Slab, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  }
 
   /**
  * Shades of Purple Theme for Prism.js

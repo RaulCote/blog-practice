@@ -10,4 +10,6 @@ export const MEDIA_QUERY_WIDE_SCREEN_FROM =
   '@media screen and (min-width: 1501px)';
 export const MEDIA_QUERY_WIDE_SCREEN_LIMIT =
   '@media screen and (max-width: 1500px)';
-export const MEDIA_QUERY_HOVER_SUPPORTED = '@media (hover: hover)';
+export const MEDIA_QUERY_HOVER_SUPPORTED =
+  '@media screen and (min-width: 750px)';
+// export const MEDIA_QUERY_HOVER_SUPPORTED = '@media (hover: hover)';

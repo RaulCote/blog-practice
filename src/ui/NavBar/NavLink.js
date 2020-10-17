@@ -2,7 +2,10 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeContext } from 'styled-components';
 import { Link } from 'gatsby';
-import { MEDIA_QUERY_HOVER_SUPPORTED } from '../variables';
+import {
+  MEDIA_QUERY_HOVER_SUPPORTED,
+  MEDIA_QUERY_MOBILE_LIMIT,
+} from '../variables';
 
 export const NavLinkStyled = styled(Link)`
   color: ${props => props.theme.colors.titles};
@@ -17,12 +20,19 @@ export const NavLinkStyled = styled(Link)`
   justify-content: center;
   align-items: center;
   border-top: 4px solid transparent;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1rem;
 
   ${MEDIA_QUERY_HOVER_SUPPORTED} {
     &:hover {
       opacity: 1;
       color: ${props => props.theme.colors.textColorHover};
+      background-color: ${props => props.theme.colors.backgroundHover};
+    }
+  }
+
+  ${MEDIA_QUERY_MOBILE_LIMIT} {
+    &:active {
       background-color: ${props => props.theme.colors.backgroundHover};
     }
   }
