@@ -37,9 +37,6 @@ body.dark {
 
 body {
 
-  ${NavLinkStyled} {
-
-  }
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
   transition-duration: 0.2s;
