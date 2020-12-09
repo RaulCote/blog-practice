@@ -20,24 +20,6 @@ const NavFooterStyled = styled.nav`
   }
 `;
 
-const NavFooterPost = ({ previousBlogPost, nextBlogPost }) => (
-  <NavFooterStyled>
-    <ul>
-      {previousBlogPost && (
-        <LinkFooterPost to={previousBlogPost.fields.slug} rel={'prev'}>
-          ← {previousBlogPost.frontmatter.title}
-        </LinkFooterPost>
-      )}
-
-      {nextBlogPost && (
-        <LinkFooterPost to={nextBlogPost.fields.slug} rel={'next'}>
-          {nextBlogPost.frontmatter.title} →
-        </LinkFooterPost>
-      )}
-    </ul>
-  </NavFooterStyled>
-);
-
 const LinkFooterStyled = styled.li`
   list-style-type: none;
   display: block;
@@ -67,6 +49,24 @@ const LinkFooterStyled = styled.li`
     }
   }
 `;
+
+const NavFooterPost = ({ previousBlogPost, nextBlogPost }) => (
+  <NavFooterStyled>
+    <ul>
+      {previousBlogPost && (
+        <LinkFooterPost to={previousBlogPost.fields.slug} rel={'prev'}>
+          ← {previousBlogPost.frontmatter.title}
+        </LinkFooterPost>
+      )}
+
+      {nextBlogPost && (
+        <LinkFooterPost to={nextBlogPost.fields.slug} rel={'next'}>
+          {nextBlogPost.frontmatter.title} →
+        </LinkFooterPost>
+      )}
+    </ul>
+  </NavFooterStyled>
+);
 
 const LinkFooterPost = ({ to, children, rel }) => (
   <LinkFooterStyled>
